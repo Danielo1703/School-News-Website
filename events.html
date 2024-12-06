@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UMBC News - Events</title>
+    <style>
+        body {
+            background-color: #003399;  /* UMBC Blue */
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #000000;  /* UMBC Black */
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-button {
+            color: #FDB930;  /* UMBC Gold */
+            text-decoration: none;
+            padding: 8px 15px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .nav-button:hover {
+            color: white;
+        }
+
+        .utility-nav {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .search-icon {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
+
+        .events-container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 20px;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .event-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .event-date {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .event-title {
+            color: #000;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .event-details {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .event-info {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+
+        .register-button {
+            display: inline-block;
+            background: #FDB930;
+            color: black;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .register-button:hover {
+            background: #e5a82c;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-section">
+            <img src="images/logo.jpg" alt="UMBC News" class="logo">
+            <div class="nav-buttons">
+                <a href="first.php" class="nav-button">HOME</a>
+                <a href="academics.html" class="nav-button">ACADEMICS</a>
+                <a href="events.html" class="nav-button">EVENTS</a>
+            </div>
+        </div>
+        <div class="utility-nav">
+            <a href="contact.html" class="nav-button">CONTACT</a>
+            <a href="account.html" class="nav-button">ACCOUNT</a>
+            <img src="images/search.png" alt="Search" class="search-icon" onclick="toggleSearch()">
+        </div>
+    </header>
+
+    <div class="events-container">
+        <div class="event-card">
+            <img src="images/nature1.jpg" alt="Spring Festival">
+            <div class="event-date">December 15, 2024</div>
+            <h2 class="event-title">UMBC Annual Spring Festival</h2>
+            <div class="event-info">
+                <p><strong>Time:</strong> 11:00 AM - 4:00 PM</p>
+                <p><strong>Location:</strong> The Commons</p>
+                <p><strong>Cost:</strong> Free for UMBC Students</p>
+            </div>
+            <div class="event-details">
+                <p>Join us for UMBC's biggest spring celebration! Featuring live music, food vendors, student performances, and interactive activities. Don't miss the annual student organization showcase and alumni meet-and-greet.</p>
+                <a href="#" class="register-button">Register Now</a>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <img src="images/asteroid.jpg" alt="Tech Summit">
+            <div class="event-date">December 10, 2024</div>
+            <h2 class="event-title">UMBC Tech Innovation Summit</h2>
+            <div class="event-info">
+                <p><strong>Time:</strong> 9:00 AM - 5:00 PM</p>
+                <p><strong>Location:</strong> ITE Building</p>
+                <p><strong>Cost:</strong> Free with Registration</p>
+            </div>
+            <div class="event-details">
+                <p>Experience the future of technology at UMBC's Tech Innovation Summit. Industry leaders, alumni, and current students showcase breakthrough research and emerging technologies.</p>
+                <a href="#" class="register-button">Register Now</a>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <img src="images/owl.jpg" alt="Career Fair">
+            <div class="event-date">December 8, 2024</div>
+            <h2 class="event-title">Winter Career & Internship Fair</h2>
+            <div class="event-info">
+                <p><strong>Time:</strong> 10:00 AM - 3:00 PM</p>
+                <p><strong>Location:</strong> RAC Arena</p>
+                <p><strong>Cost:</strong> Free for UMBC Students</p>
+            </div>
+            <div class="event-details">
+                <p>Connect with over 100 employers looking to hire UMBC students and alumni. Bring your resume and dress professionally. Pre-registration required.</p>
+                <a href="#" class="register-button">Register Now</a>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <img src="images/car1.jpg" alt="Sports Event">
+            <div class="event-date">December 7, 2024</div>
+            <h2 class="event-title">UMBC Basketball Home Game</h2>
+            <div class="event-info">
+                <p><strong>Time:</strong> 7:00 PM</p>
+                <p><strong>Location:</strong> UMBC Event Center</p>
+                <p><strong>Cost:</strong> Free for UMBC Students with ID</p>
+            </div>
+            <div class="event-details">
+                <p>Come support your UMBC Retrievers as they take on their rivals! First 500 students receive free UMBC spirit wear. Pre-game festivities start at 6:00 PM.</p>
+                <a href="#" class="register-button">Get Tickets</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSearch() {
+            alert('Search feature coming soon!');
+        }
+    </script>
+</body>
+</html>

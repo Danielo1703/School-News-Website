@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UMBC News - Account Info</title>
+    <style>
+        body {
+            background-color: #003399;  /* UMBC Blue */
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #000000;  /* UMBC Black */
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-button {
+            color: #FDB930;  /* UMBC Gold */
+            text-decoration: none;
+            padding: 8px 15px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .nav-button:hover {
+            color: white;
+        }
+
+        .account-container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            margin: 80px auto;
+        }
+
+        .account-info {
+            margin-top: 20px;
+        }
+
+        .info-row {
+            display: flex;
+            margin: 15px 0;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 4px;
+        }
+
+        .info-label {
+            width: 150px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .info-value {
+            flex: 1;
+            color: #666;
+        }
+
+        .utility-nav {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .search-icon {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-section">
+            <img src="images/logo.jpg" alt="UMBC News" class="logo">
+            <div class="nav-buttons">
+                <a href="first.php" class="nav-button">HOME</a>
+                <a href="academics.html" class="nav-button">ACADEMICS</a>
+                <a href="events.html" class="nav-button">EVENTS</a>
+            </div>
+        </div>
+        <div class="utility-nav">
+            <a href="contact.html" class="nav-button">CONTACT</a>
+            <a href="account.html" class="nav-button">ACCOUNT</a>
+            <img src="images/search.png" alt="Search" class="search-icon" onclick="toggleSearch()">
+        </div>
+    </header>
+
+    <div class="account-container">
+        <h1>UMBC Student Account</h1>
+        
+        <div class="account-info">
+            <div class="info-row">
+                <div class="info-label">Student ID:</div>
+                <div class="info-value">XX123456</div>
+            </div>
+            
+            <div class="info-row">
+                <div class="info-label">Email:</div>
+                <div class="info-value">student@umbc.edu</div>
+            </div>
+            
+            <div class="info-row">
+                <div class="info-label">Major:</div>
+                <div class="info-value">Information Systems</div>
+            </div>
+            
+            <div class="info-row">
+                <div class="info-label">Class Standing:</div>
+                <div class="info-value">Senior</div>
+            </div>
+            
+            <div class="info-row">
+                <div class="info-label">Enrollment Status:</div>
+                <div class="info-value">Full-Time</div>
+            </div>
+            
+            <div class="info-row">
+                <div class="info-label">Academic Level:</div>
+                <div class="info-value">Undergraduate</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSearch() {
+            alert('Search feature coming soon!');
+        }
+    </script>
+</body>
+</html>

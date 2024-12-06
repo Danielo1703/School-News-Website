@@ -1,0 +1,115 @@
+<!-- admin/comments.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UMBC News - Comments Management</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #003399;  /* UMBC Blue */
+        }
+
+        .header {
+            background-color: #000000;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-button {
+            color: #FDB930;
+            text-decoration: none;
+            padding: 8px 15px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .nav-button:hover {
+            color: white;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .comments-list {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .comments-table th, .comments-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .action-button {
+            padding: 6px 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            margin-right: 5px;
+        }
+
+        .approve-button {
+            background: #28a745;
+        }
+
+        .delete-button {
+            background: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="../images/logo.jpg" alt="UMBC News" class="logo">
+        <div class="nav-buttons">
+            <a href="dashboard.html" class="nav-button">DASHBOARD</a>
+            <a href="categories.php" class="nav-button">CATEGORIES</a>
+            <a href="news.html" class="nav-button">NEWS</a>
+            <a href="comments.html" class="nav-button">COMMENTS</a>
+            <a href="../first.php" class="nav-button">PUBLIC SITE</a>
+            <a href="../logout.php" class="nav-button">LOGOUT</a>
+        </div>
+    </header>
+
+    <div class="content-container">
+        <div class="comments-list">
+            <h2>Moderate Comments</h2>
+            <table class="comments-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Comment</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- PHP code to fetch comments would go here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

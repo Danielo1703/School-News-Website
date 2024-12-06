@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UMBC News - Academics</title>
+    <style>
+        body {
+            background-color: #003399;  /* UMBC Blue */
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #000000;  /* UMBC Black */
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-button {
+            color: #FDB930;  /* UMBC Gold */
+            text-decoration: none;
+            padding: 8px 15px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .nav-button:hover {
+            color: white;
+        }
+
+        .utility-nav {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .search-icon {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
+
+        .news-container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 20px;
+        }
+
+        .news-article {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-article img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .article-date {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .article-title {
+            color: #000;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .article-content {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .read-more {
+            display: inline-block;
+            background: #FDB930;
+            color: black;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .read-more:hover {
+            background: #e5a82c;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-section">
+            <img src="images/logo.jpg" alt="UMBC News" class="logo">
+            <div class="nav-buttons">
+                <a href="first.php" class="nav-button">HOME</a>
+                <a href="academics.html" class="nav-button">ACADEMICS</a>
+                <a href="events.html" class="nav-button">EVENTS</a>
+            </div>
+        </div>
+        <div class="utility-nav">
+            <a href="contact.html" class="nav-button">CONTACT</a>
+            <a href="account.html" class="nav-button">ACCOUNT</a>
+            <img src="images/search.png" alt="Search" class="search-icon" onclick="toggleSearch()">
+        </div>
+    </header>
+
+    <div class="news-container">
+        <div class="news-article">
+            <img src="images/nature1.jpg" alt="Computer Science Achievement">
+            <div class="article-date">December 5, 2024</div>
+            <h2 class="article-title">UMBC Computer Science Department Receives $5M Grant for AI Research</h2>
+            <div class="article-content">
+                <p>The Computer Science department at UMBC has been awarded a prestigious $5 million grant to advance research in artificial intelligence and machine learning. The funding will support new faculty positions, graduate student research, and state-of-the-art laboratory equipment.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+
+        <div class="news-article">
+            <img src="images/asteroid.jpg" alt="Research Achievement">
+            <div class="article-date">December 4, 2024</div>
+            <h2 class="article-title">New Data Science Program Launches at UMBC</h2>
+            <div class="article-content">
+                <p>UMBC introduces a cutting-edge Data Science program, responding to industry demand for skilled data professionals. The program will offer both undergraduate and graduate tracks, featuring partnerships with leading tech companies.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+
+        <div class="news-article">
+            <img src="images/owl.jpg" alt="Academic Excellence">
+            <div class="article-date">December 3, 2024</div>
+            <h2 class="article-title">UMBC Faculty Member Wins National Teaching Award</h2>
+            <div class="article-content">
+                <p>Dr. Sarah Johnson from the Information Systems Department has been recognized with the National Excellence in Teaching Award. Her innovative approaches to classroom instruction and commitment to student success have earned national recognition.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+
+        <div class="news-article">
+            <img src="images/car1.jpg" alt="Engineering Success">
+            <div class="article-date">December 2, 2024</div>
+            <h2 class="article-title">Engineering Students Win First Place in National Competition</h2>
+            <div class="article-content">
+                <p>A team of UMBC engineering students has taken first place in the National Engineering Design Challenge. Their innovative solution for sustainable urban transportation impressed judges and industry experts.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSearch() {
+            alert('Search feature coming soon!');
+        }
+    </script>
+</body>
+</html>
