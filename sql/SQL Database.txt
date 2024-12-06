@@ -1,0 +1,115 @@
+﻿-- Set up the database
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+CREATE DATABASE IF NOT EXISTS `prj_is448` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `prj_is448`;
+
+
+-- Members table (Admin users)
+CREATE TABLE `members` (
+  `id` int(4) NOT NULL AUTO_INCREMENT,
+  `username` varchar(65) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+-- Insert initial members
+INSERT INTO `members` (`id`, `username`, `password`) VALUES
+(1, 'Kamran', 'kamran1'),
+(2, 'test', 'test'),
+(5, 'user', 'passsword');
+
+
+-- Categories table
+CREATE TABLE `tblcategory` (
+  `catid` int(6) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `catname` varchar(30) NOT NULL,
+  PRIMARY KEY (`catid`),
+  UNIQUE KEY `catname` (`catname`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+-- Insert categories
+INSERT INTO `tblcategory` (`catid`, `catname`) VALUES
+(1, 'WORLSNEWS'),
+(2, 'SPORTS'),
+(3, 'LOCALNEWS'),
+(21, 'Test11'),
+(22, 'Test12345');
+
+
+-- News table
+CREATE TABLE `tblnews` (
+  `newsid` int(6) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `newsheadline` varchar(100) NOT NULL,
+  `newsdetails` longtext NOT NULL,
+  `newsimage` varchar(255) NOT NULL,
+  `newsdate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `newsautor` varchar(30) NOT NULL,
+  `newscatid` int(6) UNSIGNED NOT NULL,
+  PRIMARY KEY (`newsid`),
+  KEY `newscatid` (`newscatid`),
+  CONSTRAINT `fk_news_category` FOREIGN KEY (`newscatid`) 
+    REFERENCES `tblcategory` (`catid`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+-- Insert news
+INSERT INTO `tblnews` (`newsid`, `newsheadline`, `newsdetails`, `newsimage`, `newsdate`, `newsautor`, `newscatid`) VALUES
+(1, 'Test News 1', 'Test News 1 Test News 1 Test News 1 Test News 1 Test News 1', 'download.jpg', NOW(), 'UMBC', 1),
+(2, 'Test News 2', 'Test News 2 Test News 2 Test News 2 Test News 2 Test News 2', 'download1.jpg', NOW(), 'User1', 2),
+(3, 'Test News 3', 'Test News 3 Test News 3 Test News 3 Test News 3 Test News 3', 'download2.jpg', NOW(), 'news', 1),
+(4, 'Test News NEWS 4', 'Test News NEWS 4 Test News NEWS 4 Test News NEWS 4', 'download3.jpg', NOW(), 'cnn', 1),
+(5, 'LOCAL NEWS 1', 'LOCAL NEWS 1 LOCAL NEWS 1 LOCAL NEWS 1 LOCAL NEWS 1', 'download5.jpg', NOW(), 'Baltimore', 3),
+(7, 'UMBC_Sports', 'UMBC_Sports UMBC_Sports UMBC_Sports UMBC_Sports', 'download7.jpg', NOW(), 'umbc', 2),
+(30, '12345', '12345123451234512345123451234512345', 'MB4.png', '2019-04-05', '12345', 22),
+(31, 'Insert T', 'Kamran T Kamran T Kamran T Kamran T', 'MB3.png', '2019-04-03', 'Kamran T', 1);
+
+
+-- Comments table
+CREATE TABLE `tblcomment` (
+  `commentid` int(4) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `comment` text NOT NULL,
+  `newsid` int(6) UNSIGNED NOT NULL,
+  `showhide` tinyint(1) NOT NULL DEFAULT 0,
+  `ip_address` varchar(45) DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`commentid`),
+  KEY `newsid` (`newsid`),
+  CONSTRAINT `fk_comment_news` FOREIGN KEY (`newsid`) 
+    REFERENCES `tblnews` (`newsid`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+-- Insert comments
+INSERT INTO `tblcomment` (`commentid`, `comment`, `newsid`, `showhide`) VALUES
+(2, 'test 1', 1, 1),
+(3, 'test 2', 1, 0),
+(4, 'Test 3', 1, 1),
+(5, 'Test 4', 1, 0),
+(6, 'Test News 2 Comments Comments Comments Comments Comments Comment', 2, 1),
+(7, 'Test News 2 Test News 2 Test News 2 Test News 2 Test News 2 Tes', 2, 1),
+(8, 'fgfdgfd', 31, 1),
+(9, '43543543', 31, 1),
+(10, 'QQQQQ', 31, 0),
+(11, '7777', 1, 0);
+
+
+-- Styles table
+CREATE TABLE `tblstyle` (
+  `styleid` int(6) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `tag` varchar(30) NOT NULL,
+  `value` text NOT NULL,
+  PRIMARY KEY (`styleid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+-- Insert styles
+INSERT INTO `tblstyle` (`styleid`, `tag`, `value`) VALUES
+(1, 'H1', '#f34160'),
+(2, 'H2', '#1adf37'),
+(3, 'H3', '#bcbcbc');
